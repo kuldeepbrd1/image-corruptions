@@ -1,0 +1,40 @@
+{
+    "corruption_methods": {
+        "random_erase": false,
+        "color_jitter": true,
+        "gaussian_noise": true,
+        "shot_noise": true,
+        "impulse_noise": true,
+        "speckle_noise": true,
+        "gaussian_blur": true,
+        "glass_blur": true,
+        "defocus_blur": true,
+        "motion_blur": true,
+        "zoom_blur": true,
+        "fog": true,
+        "spatter": true,
+        "earth_bg": false
+    },
+
+    "ordered_randomization_layers":{
+        "background" : {"effects": ["earth_bg"], "p": 0, "level": null},
+        "color" : {"effects": ["color_jitter"], "p": 0.3, "level": 1},
+        "noise" : {"effects": ["gaussian_noise", "shot_noise", "impulse_noise", "speckle_noise"], "p": 0.4, "level": 1},
+        "blur" :  {"effects": ["gaussian_blur", "defocus_blur", "motion_blur", "zoom_blur", "spatter"], "p": 0.3, "level": 1},
+        "erase" : {"effects": ["random_erase"], "p": 0, "level": null}
+    },
+    
+    "extensions": {
+        "original": "png",
+        "background":"png",
+        "target": "png"
+    },
+
+    "opts":{
+        "earth_augmentation":{
+            "ann_file": "C:\\Users\\apoca\\Desktop\\data\\Envisat_ICTR\\json_data\\bbox\\train_bbox.json",
+            "earth_bg_images_dir": "C:\\Users\\apoca\\Google Drive (k.r.barad@student.tudelft.nl)\\Envisat\\data\\Himawari-8\\01_June_2020_0000_1300"
+        },
+        "skip_existing_target_images": false 
+    }
+}
