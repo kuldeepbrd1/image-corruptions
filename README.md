@@ -1,5 +1,6 @@
 # Image corruption and augmentations in Python
 
+This repo is based on [Benchmarking Neural Network Robustness to Common Corruptions and Perturbations](https://arxiv.org/abs/1903.12261) and the [original repository](https://github.com/hendrycks/robustness)
 ### Get Started
 1. Make a new conda environment 
     ```shell
