@@ -192,8 +192,10 @@ class AugmentedDataset:
         self.assign_augmentations = {}
         for filename in self.filenames:
             self.assign_augmentations[filename] = []
-
-        self.assign_one_random()
+        ## Composite effect
+        self.assign_all()
+        ## Single effect
+        #self.assign_one_random()
 
         self.subfolders = source_DS.subfolders
         self.subfolder_to_idx = source_DS.subfolder_to_idx
@@ -215,7 +217,12 @@ class AugmentedDataset:
                     inverted_dict[effect] = key 
         return inverted_dict
 
-
+    def assign_all(self):
+        self.assign_earth_bg_and_random_erase()
+        self.assign_color_jitter()
+        self.assign_blur()
+        self.assign_noise()
+        return
 
     def assign_one_random(self):
         all_augs = self.augs_list
